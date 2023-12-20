@@ -20,7 +20,6 @@ public class Accolite {
                 .entrySet().stream().filter(e->e.getValue()>1).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
 
-
         Map<String, Long> data = list.stream().map(e-> String.valueOf(e))
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
                 .entrySet().stream().filter(e-> e.getValue()>1)
